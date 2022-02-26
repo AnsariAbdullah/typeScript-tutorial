@@ -133,3 +133,17 @@ let john = new Person(2, 'John Pinto')
 
 // console.log(john.register())
 // console.log(brad, john);
+
+// Extending Classes -> this is a subclass
+class Employee extends Person {
+	position: string
+
+	constructor(id:number, name:string, position:string){
+		super(id, name);
+		this.position = position
+	}
+}
+
+const emp = new Employee(5, 'Shawn', 'Developer')
+
+console.log(emp);
