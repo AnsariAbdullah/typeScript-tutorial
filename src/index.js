@@ -105,3 +105,22 @@ var Employee = /** @class */ (function (_super) {
 }(Person));
 var emp = new Employee(5, 'Shawn', 'Developer');
 console.log(emp);
+// Generics
+// creating a function that takes an array of any type and returns an array of any type
+function getArray(items) {
+    return new Array().concat(items);
+}
+var numArray = getArray([1, 2, 3, 4]);
+var strArray = getArray(['Brad', 'John', 'Jill']);
+// since it take an array of any type it takes a string as well
+numArray.push('Jack');
+// since it take an array of any type it takes a number as well
+strArray.push('Jack');
+// To avoid such thing we can do this
+function getArr(items) {
+    return new Array().concat(items);
+}
+var nArray = getArr([1, 2, 3, 4]);
+var sArray = getArr(['Brad', 'Jack', 'John', 'Jill']);
+// nArray.push('Jack')		// This is not allowed now since it will take an array of type number only as defined while declaring
+// sArray.push(1)					// This is not allowed now since it will take an array of type string only as defined while declaring
